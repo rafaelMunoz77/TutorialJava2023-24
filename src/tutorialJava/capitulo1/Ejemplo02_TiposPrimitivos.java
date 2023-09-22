@@ -10,15 +10,15 @@ public class Ejemplo02_TiposPrimitivos {
 		float numFlotante; // Declaración de una variable real o flotante
 		double numDouble; // Declaración de una variable flotante larga
 		
-		numEntero = (int) 4.8; // Asignación de un valor a una variable
-		numFlotante = (float) 4.5; // Casting de valor double a float
+		numEntero = 4 + 6; // Asignación de un valor a una variable
+		numFlotante = (float) 4; // Casting de valor double a float
 		numDouble = 4.8; // Asignación de valor double a variable double
 	
 		// Impresión en la consola de salida de las variabless
-		System.out.println("El valor de la variable numEntero es: " + numEntero +
-				"\nEl valor de la variable numFlotante es: " + numFlotante +
-				"\nEl valor de la variable numDouble es: " + numDouble + 
-				"\nY la suma de todos vale: " + (numEntero + numFlotante + numDouble));
+		System.out.print("El número entero es " + numEntero + 
+				"\ny el número flotante es " + numFlotante + 
+				"\ny el número double es: " + numDouble);          
+		
 	}
 	    
 	

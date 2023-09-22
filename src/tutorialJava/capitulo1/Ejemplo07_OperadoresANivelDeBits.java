@@ -1,6 +1,6 @@
 package tutorialJava.capitulo1;
 
-public class Ejemplo05_OperadoresANivelDeBits {
+public class Ejemplo07_OperadoresANivelDeBits {
 
 	public static void main(String[] args) {
 	    // Declaración de variables enteras, e inicialización de las mismas.

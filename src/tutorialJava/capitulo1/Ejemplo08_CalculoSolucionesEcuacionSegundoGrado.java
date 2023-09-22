@@ -2,7 +2,7 @@ package tutorialJava.capitulo1;
 
 import java.util.Scanner;
 
-public class Ejemplo06_CalculoSolucionesEcuacionSegundoGrado {
+public class Ejemplo08_CalculoSolucionesEcuacionSegundoGrado {
 
 	public static void main (String args[]) {
 		Scanner sc = new Scanner(System.in);

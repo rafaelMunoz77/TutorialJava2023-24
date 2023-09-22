@@ -20,3 +20,10 @@ public class Ejemplo04_LecturaDeDatosDelUsuarioConJOptionPane {
 		System.out.println("Valor de numeroFlotante: " + numeroFlotante);
 	}
 }
+
+
+
+
+
+
+

@@ -2,7 +2,7 @@ package tutorialJava.capitulo1;
 
 import java.util.Scanner;
 
-public class Ejemplo04_LecturaDeDatosDelUsuarioConScanner {
+public class Ejemplo05_LecturaDeDatosDelUsuarioConScanner {
 
 	public static void main (String args[]) {
 		Scanner sc = new Scanner(System.in);
