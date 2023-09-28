@@ -9,35 +9,13 @@ public class Ejemplo01_Condicionales {
 	 * @param args
 	 */
 	public static void main (String args[]) {		
-//		condicionalMuySimple();
 //		primerEjemploCondicionalSimple();
 //		ejemploCondicionalCompuesto();
 //		ejemploCondicionalAnidado();
-//		ejemploCondicionalMultiple();
-		ejemploOperadorTernario();
+		ejemploCondicionalMultiple();
+//		ejemploOperadorTernario();
 	}
 	
-	
-	/**
-	 * 
-	 */
-	public static void condicionalMuySimple () {
-		int num = (int) Math.round(Math.random() * 100);
-		
-		System.out.println("num: " + num);
-		
-		if (num != 0) {
-			System.out.println("Positivo");
-		}
-		else {
-			System.out.println("Negativo o cero");
-		}
-		
-		System.out.println("Terminado");
-
-	}
-	
-
 	
 	/**
 	 * Cómo utilizar simplemente un operador if
@@ -96,7 +74,7 @@ public class Ejemplo01_Condicionales {
 	 * Ejemplo de switch
 	 */
 	public static void ejemploCondicionalMultiple () {
-		int nota = 0;
+		int nota = 1;
 		
 		// switch decidirá el camino a tomar en función del valor
 		// de la variable
@@ -153,3 +131,12 @@ public class Ejemplo01_Condicionales {
 	}
 	
 }
+
+
+
+
+
+
+
+
+
