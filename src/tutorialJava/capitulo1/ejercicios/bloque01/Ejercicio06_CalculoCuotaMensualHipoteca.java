@@ -5,25 +5,35 @@ import java.util.Scanner;
 public class Ejercicio06_CalculoCuotaMensualHipoteca {
 
 	public static void main(String[] args) {
-		int num1, num2, aux;
+		int meses;
+		float capital, euribor, diferencial, interesAnual, interesMensual;
+		float calcIntermedio, cuotaMensual;
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("Introduzca un número: ");
-		num1 = sc.nextInt();
-		System.out.println("El número es: " + num1);
+		System.out.println("Introduzca los meses: ");
+		meses = sc.nextInt();
 
-		System.out.println("Introduzca otro número: ");
-		num2 = sc.nextInt();
-		System.out.println("El número es: " + num2);
+		System.out.println("Introduzca el capital: ");
+		capital = sc.nextFloat();
 
-		System.out.println("Num1: " + num1 + " - num2: " + num2);
+		System.out.println("Introduzca el euribor: ");
+		euribor = sc.nextFloat();
+
+		System.out.println("Introduzca el diferencial: ");
+		diferencial = sc.nextFloat();
+
+		interesAnual = euribor + diferencial;
+		interesMensual = interesAnual / 12 / 100;
+		calcIntermedio = (float) Math.pow(1 + interesMensual, meses);
+		cuotaMensual = capital * (interesMensual * calcIntermedio) / 
+				(calcIntermedio - 1);
 		
-		aux = num1;
-		num1 = num2;
-		num2 = aux;
-		
-		System.out.println("Num1: " + num1 + " - num2: " + num2);
-		
+		System.out.println("Cuota mensual: " + cuotaMensual + " €");		
 	}
 
 }
+
+
+
+
+
