@@ -16,7 +16,7 @@ public class Ejercicio05_DevolucionEnMonedas {
 		cambioADevolver = paga - precio;
 		
 		System.out.println((cambioADevolver / 100) + " Monedas de 100");
-		cambioADevolver %= 100;
+		cambioADevolver = cambioADevolver % 100;
 		System.out.println((cambioADevolver / 50) + " Monedas de 50");
 		cambioADevolver %= 50;
 		System.out.println((cambioADevolver / 25) + " Monedas de 25");

@@ -35,12 +35,8 @@ public class Ejercicio04_CalculadoraGeometria {
 			System.out.println("Introduzca radio del círculo: ");
 			num1 = sc.nextInt();
 			System.out.println("Resultado = " + (2 * Math.PI * num1));
-			break;
-			
-			
-			
+			break;			
 		}
-
 	}
 
 }
