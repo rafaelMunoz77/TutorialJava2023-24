@@ -7,9 +7,9 @@ public class Ej01_EjemploArraysPrimitivos {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-//		primerEjemploArray();
+		primerEjemploArray();
 //		segundoEjemploArray();
-		tercerEjemploArray();
+//		tercerEjemploArray();
 	}
 	
 	
@@ -67,7 +67,7 @@ public class Ej01_EjemploArraysPrimitivos {
 		
 		// Recorro e imprimo en pantalla
 		for (int i = 0; i < array.length; i++) {
-//			System.out.print(array[i] + " ");
+			System.out.print(array[i] + " ");
 		}
 		System.out.println("");
 		
