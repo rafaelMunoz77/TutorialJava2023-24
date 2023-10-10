@@ -12,9 +12,6 @@ public class Ejercicio02_MayorMenorNumerosHasta0 {
 		for (int i = 0; num != 0; i++) {
 			System.out.println("Introduzca número: ");
 			num = sc.nextInt();
-			if (num == 0) {
-				break;
-			}
 			if (i == 0) {
 				mayor = num;
 				menor = num;
