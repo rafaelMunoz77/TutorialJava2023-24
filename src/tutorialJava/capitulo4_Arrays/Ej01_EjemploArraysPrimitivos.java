@@ -1,5 +1,7 @@
 package tutorialJava.capitulo4_Arrays;
 
+import java.util.Scanner;
+
 public class Ej01_EjemploArraysPrimitivos {
 	
 	/**
@@ -18,14 +20,13 @@ public class Ej01_EjemploArraysPrimitivos {
 	 */
 	public static void primerEjemploArray () {
 		// Declaración del array, a través de la sentencia "new"
-		int numeros[] = new int[15000000];
-		
+		int numeros[] = new int[5];
 		
 		// Inicialización de los valores del array
 		for (int i = 0; i < numeros.length; i++) {
 			numeros[i] = (int) Math.round(Math.random() * 100);
 		}
-
+		
 		// Recorrido del array para imprimir sus valores en pantalla
 		for (int i = 0; i < numeros.length; i++) {
 			System.out.print(numeros[i] + " ");
@@ -43,8 +44,8 @@ public class Ej01_EjemploArraysPrimitivos {
 
 		// Recorrido del array para imprimir sus valores en pantalla.
 		// Este tipo de bucle se conoce como "for each".
-		for (int i : array2) {
-			System.out.println(i);
+		for (int valorDentroDeArray : array2) {
+			System.out.println(valorDentroDeArray);
 		}
 	}
 
@@ -91,3 +92,11 @@ public class Ej01_EjemploArraysPrimitivos {
 				" - mayor: " + mayor + " - menor: " + menor);
 	}
 }
+
+
+
+
+
+
+
+
