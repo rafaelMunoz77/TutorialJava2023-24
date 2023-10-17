@@ -9,16 +9,16 @@ public class Ejercicio03_TablasMultiplicarHasta15 {
 		
 		// En lugar de bucles "for" usaré bucles while
 		
-		while (num <= 15) {
+		do {
 			factor = 1;
 			System.out.println("\nTabla de multiplicar del " + num);
-			while (factor <= 10) {
+			do {
 				System.out.println("\t" + num + " x " + factor + " = " + (num * factor));
 				factor++; // Aumento el factor
-			}
+			} while (factor <= 10);
 			
 			num++; // Prepara para que se calcule la tabla de multiplicar del siguiente número;
-		}
+		} while (num <= 15);
 	}
 
 }

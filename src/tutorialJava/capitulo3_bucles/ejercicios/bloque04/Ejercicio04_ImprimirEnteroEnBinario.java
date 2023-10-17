@@ -26,9 +26,14 @@ public class Ejercicio04_ImprimirEnteroEnBinario {
 			}
 			
 			// Acualizo el valor del numDescubrimientoBits para que apunte al siguiente bit por descubrir
-			numDescubrimientoBits /= 2;
+			numDescubrimientoBits >>= 1;
 		}
 
 	}
 
 }
+
+
+
+
+

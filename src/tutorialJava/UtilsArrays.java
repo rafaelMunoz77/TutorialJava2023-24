@@ -4,7 +4,8 @@ public class UtilsArrays {
 
 	
 	/**
-	 * 
+	 * Imprime el array en consola, de forma que queda en una única línea y con
+	 * un espacio en blanco entre valores
 	 * @param num
 	 */
 	public static void imprimeArray (int a[]) {

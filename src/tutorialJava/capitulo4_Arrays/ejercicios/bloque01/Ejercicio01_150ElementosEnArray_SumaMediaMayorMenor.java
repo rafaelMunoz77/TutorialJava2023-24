@@ -6,7 +6,7 @@ import tutorialJava.UtilsArrays;
 public class Ejercicio01_150ElementosEnArray_SumaMediaMayorMenor {
 
 	public static void main(String[] args) {
-		int array[] = new int[500], mayor, menor;
+		int array[] = new int[500];
 
 		UtilsArrays.inicializaArray(array, 0, 100);
 		
