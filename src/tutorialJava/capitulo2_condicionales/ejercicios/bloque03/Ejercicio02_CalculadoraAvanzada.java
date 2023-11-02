@@ -2,7 +2,7 @@ package tutorialJava.capitulo2_condicionales.ejercicios.bloque03;
 
 import java.util.Scanner;
 
-public class Ejercicio03_CalculadoraAvanzada {
+public class Ejercicio02_CalculadoraAvanzada {
 
 	public static void main(String[] args) {
 		int opcion, num1, num2;

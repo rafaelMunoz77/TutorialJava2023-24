@@ -2,7 +2,7 @@ package tutorialJava.capitulo2_condicionales.ejercicios.bloque03;
 
 import java.util.Scanner;
 
-public class Ejercicio04_CalculadoraGeometria {
+public class Ejercicio03_CalculadoraGeometria {
 
 	public static void main(String[] args) {
 		int opcion, num1, num2;
@@ -12,6 +12,8 @@ public class Ejercicio04_CalculadoraGeometria {
 				+ "\n1.- Hipotenusa de un triángulo."
 				+ "\n2.- Superficie de un círculo."
 				+ "\n3.- Longitud de una circunferencia."
+				+ "\n4.- Área de un rectángulo."
+				+ "\n5.- Área de un triángulo."
 				+ "\n\nIntroduzca su opción: ");
 		opcion = sc.nextInt();
 		
@@ -36,6 +38,23 @@ public class Ejercicio04_CalculadoraGeometria {
 			num1 = sc.nextInt();
 			System.out.println("Resultado = " + (2 * Math.PI * num1));
 			break;			
+		// Área de un rectángulo
+		case 4:
+			System.out.println("Introduzca la base: ");
+			num1 = sc.nextInt();
+			System.out.println("Introduzca la altura: ");
+			num2 = sc.nextInt();
+			System.out.println("Resultado = " + (num1 * num2));
+			break;
+		// Área de un triángulo
+		case 5:
+			System.out.println("Introduzca la base: ");
+			num1 = sc.nextInt();
+			System.out.println("Introduzca la altura: ");
+			num2 = sc.nextInt();
+			System.out.println("Resultado = " + (num1 * num2) / 2);
+			break;
+
 		}
 	}
 

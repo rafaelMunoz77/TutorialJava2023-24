@@ -2,7 +2,7 @@ package tutorialJava.capitulo2_condicionales.ejercicios.bloque03;
 
 import java.util.Scanner;
 
-public class Ejercicio05_DevolucionEnMonedas {
+public class Ejercicio04_DevolucionEnMonedas {
 
 	public static void main(String[] args) {
 		int precio, paga, cambioADevolver;
