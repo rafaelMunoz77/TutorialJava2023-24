@@ -1,4 +1,4 @@
-package tutorialJava.capitulo4_Arrays.ejercicios.bloqu04;
+package tutorialJava.capitulo4_Arrays.ejercicios.bloque04;
 
 import java.util.Scanner;
 
