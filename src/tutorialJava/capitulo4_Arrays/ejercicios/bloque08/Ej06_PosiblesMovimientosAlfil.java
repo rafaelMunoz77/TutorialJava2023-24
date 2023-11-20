@@ -8,13 +8,20 @@ import tutorialJava.UtilsArrays;
 public class Ej06_PosiblesMovimientosAlfil {
 
 	public static void main(String[] args) {
+		String cabecerasFilas = "abcdefgh";
 		int xAlfil, yAlfil;
 		int tablero[][] = UtilsArrays.creaEInicializaMatriz(8, 8, 0);
 
 		System.out.println("Tablero del ajedrez");
 		UtilsArrays.imprimeMatriz(tablero);
+
+		System.out.println("Dame la letra de la fila: ");
+		Scanner sc = new Scanner(System.in);
+		char letraFila = sc.nextLine().charAt(0);
+		yAlfil = cabecerasFilas.indexOf(letraFila);
 		
 		yAlfil = Utils.obtenerEnteroEntreLimites("Introduzca la fila del Alfil", 1, 8) - 1;
+
 		xAlfil = Utils.obtenerEnteroEntreLimites("Introduzca la columna del Alfil", 1, 8) - 1;
 		
 		// Coloco el alfil en el tablero
