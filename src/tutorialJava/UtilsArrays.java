@@ -16,6 +16,18 @@ public class UtilsArrays {
 	}
 
 	/**
+	 * Imprime el array en consola, de forma que queda en una única línea y con
+	 * un espacio en blanco entre valores
+	 * @param num
+	 */
+	public static void imprimeArray (char a[]) {
+		for (int i = 0; i < a.length; i++) {
+			System.out.print(a[i] + " ");
+		}
+		System.out.println();
+	}
+
+	/**
 	 * 
 	 * @param a
 	 * @param limInf
