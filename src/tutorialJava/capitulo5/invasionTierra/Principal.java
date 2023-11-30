@@ -29,10 +29,23 @@ public class Principal {
 			}
 			
 			campo.muestraEstadoActual();
-			sc.nextLine();
+//			sc.nextLine();
 			
 		} while (campo.getPrimerHumanoVivo() != null &&
 				campo.getPrimerMalvadoVivo() != null);
+		
+		// Muestro el ganador
+		if (campo.getPrimerHumanoVivo() != null) {
+			System.out.println("\nHan ganado los humanos");
+		}
+		else {
+			if (campo.getPrimerMalvadoVivo() != null) {
+				System.out.println("\nHan ganado los malvados");
+			}
+			else {
+				System.out.println("\nEmpate");
+			}
+		}
 	}
 	
 	

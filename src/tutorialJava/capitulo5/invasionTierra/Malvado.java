@@ -14,6 +14,10 @@ public class Malvado {
 	
 	public void recibirDisparo() {
 		puntosVida -= Utils.obtenerNumeroAzar(5, 25);
+		if (puntosVida <= 0) {
+			vivo = false;
+			puntosVida = 0;
+		}
 	}
 	
 	public String getNombre() {
