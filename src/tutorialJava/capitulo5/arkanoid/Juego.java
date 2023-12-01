@@ -1,14 +1,19 @@
 package tutorialJava.capitulo5.arkanoid;
 
+import java.util.Iterator;
+
 import tutorialJava.Utils;
 
 public class Juego {
 	private Ladrillo ladrillos[] = new Ladrillo[20];
 	private Pelota pelota = new Pelota();
+	private Ladrillo ladrillosDestruidos[] = new Ladrillo[20];
+	private int contadorLadrillosDestruidos = 0;
 	
 	public Juego() {
 		for (int i = 0; i < ladrillos.length; i++) {
 			ladrillos[i] = new Ladrillo();
+			ladrillos[i].setNombre("L" + i);
 		}
 	}
 
@@ -18,22 +23,66 @@ public class Juego {
 	public void jugar() {
 		
 		do {
-			pelota.setX(Utils.obtenerNumeroAzar(0, 800));
-			pelota.setY(Utils.obtenerNumeroAzar(0, 500));
-			
-			for (int i = 0; i < ladrillos.length; i++) {
-				if (ladrillos[i] != null) {
-					if (pelota.chocaConLadrillo(ladrillos[i])) {
-						System.out.println("Hay un choque");
-						ladrillos[i].quitoPuntoDeVida();
-						if (ladrillos[i].getPuntosVida() < 1) {
-							ladrillos[i] = null;
-						}
+			pelota.mueveAlAzar();
+			boolean colisionConLadrillos = false;
+			for (Ladrillo l : ladrillos) {
+				if (l.getPuntosVida() > 0) {
+					if (pelota.chocaConLadrillo(l)) {
+						l.quitoPuntoDeVida();
+						colisionConLadrillos = true;
+						agregaLadrilloADestruidosSiCorresponde(l);
 					}
-				}
+				}	
+			}	
+			if (colisionConLadrillos == true) {
+				muestraArrayLadrillos();
 			}
-		} while (true);
+		} while (quedanLadrillos());
+		// Estadísticas
+		System.out.println("Primero en ser destruido: " + ladrillosDestruidos[0].toString());
+		System.out.println("Último en ser destruido: " + 
+				ladrillosDestruidos[ladrillosDestruidos.length - 1].toString());		
+		
+		System.out.println("Orden de destrucción de los ladrillos");
+		muestraArrayLadrillosDestruidos();
 	}
+	
+	
+	private void agregaLadrilloADestruidosSiCorresponde(Ladrillo l) {
+		if (l.getPuntosVida() <= 0) {
+			ladrillosDestruidos[contadorLadrillosDestruidos] = l;
+			contadorLadrillosDestruidos++;
+		}
+	}
+	
+	
+	private void muestraArrayLadrillosDestruidos() {
+		for (Ladrillo l : ladrillosDestruidos) {
+			System.out.print(l.toString() + "-");
+		}
+		System.out.println();
+	}
+	
+	
+	private void muestraArrayLadrillos() {
+		for (Ladrillo l : ladrillos) {
+			if (l.getPuntosVida() > 0) {
+				System.out.print(l.toString() + "-");
+			}
+		}
+		System.out.println();
+	}
+	
+	
+	private boolean quedanLadrillos() {
+		for (Ladrillo l : ladrillos) {
+			if (l.getPuntosVida() > 0) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	
 	public Ladrillo[] getLadrillos() {
 		return ladrillos;

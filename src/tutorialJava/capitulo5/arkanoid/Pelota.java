@@ -1,5 +1,7 @@
 package tutorialJava.capitulo5.arkanoid;
 
+import tutorialJava.Utils;
+
 public class Pelota {
 	private int x;
 	private int y;
@@ -8,15 +10,33 @@ public class Pelota {
 		super();
 	}
 	
+	/**
+	 * 
+	 * @param l
+	 * @return
+	 */
 	public boolean chocaConLadrillo(Ladrillo l) {
 		if (x >= l.getX() && x <= (l.getX() + l.getAncho()) &&
-				y >= l.getY() && y <= (l.getY() + l.getAlto())) {
+				y >= l.getY() && y <= (l.getY() + l.getAlto())) {			
 			return true;
 		}
 		return false;
 	}
 	
+	/**
+	 * 
+	 */
+	public void mueveAlAzar() {
+		x= Utils.obtenerNumeroAzar(0, 800);
+		y = Utils.obtenerNumeroAzar(0, 500);
+	}
 	
+	/////// GETTERS Y SETTER
+	
+	public String toString() {
+		return "Pelota [x=" + x + ", y=" + y + "]";
+	}
+
 	public int getX() {
 		return x;
 	}
@@ -30,9 +50,6 @@ public class Pelota {
 		this.y = y;
 	}
 	
-	public String toString() {
-		return "Pelota [x=" + x + ", y=" + y + "]";
-	}
 	
 	
 }

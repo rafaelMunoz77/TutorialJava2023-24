@@ -6,6 +6,7 @@ public class Ladrillo {
 
 	public static String COLORES[] = new String[] {"rojo", "verde", "azul"}; 
 	
+	private String nombre;
 	private String color;
 	private int x;
 	private int y, ancho, alto, puntosVida;
@@ -85,10 +86,29 @@ public class Ladrillo {
 		this.puntosVida = puntosVida;
 	}
 
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
 	public String toString() {
-		return "Ladrillo [color=" + color + ", x=" + x + ", y=" + y + ", ancho=" + ancho + ", alto=" + alto
-				+ ", puntosVida=" + puntosVida + "]";
+		return nombre + ":" + puntosVida;
 	}
 	
 	
 }
+
+
+
+
+
+
+
+
+
+
+
