@@ -27,6 +27,11 @@ public class Baraja {
 			baraja[i + 39].setValor(i + 1);
 			baraja[i + 39].setPalo("Corazones");
 		}
+		
+		// Inicializo id de ordenación de cada carta
+		for (int i = 0; i < baraja.length; i++) {
+			baraja[i].setIdOrdenacion(i);
+		}
 	}
 
 	
@@ -56,6 +61,35 @@ public class Baraja {
 			baraja[indice2] = aux;
 		}
 	}
+	
+	public void ordenar() {
+		boolean hayIntercambios;
+		do {
+			hayIntercambios = false;
+			for (int i = 0; i < (baraja.length - 1); i++) {
+				if (baraja[i].getIdOrdenacion() > baraja[i + 1].getIdOrdenacion()) {
+					Carta aux = baraja[i];
+					baraja[i] = baraja[i + 1];
+					baraja[i + 1] = aux;
+					hayIntercambios = true;
+				}
+			}
+		} while (hayIntercambios == true);
+	}
+	
+	public void reparteManoAJugador(Jugador j) {
+		int cartasDadas = 0;
+		for (int i = baraja.length - 1; i > -1 && 
+				cartasDadas < j.getMano().length; i--) {
+			
+			if (baraja[i] != null) {
+				j.getMano()[cartasDadas] = baraja[i];
+				cartasDadas++;
+				baraja[i] = null;
+			}
+		}
+	}
+	
 	
 	public Carta[] getBaraja() {
 		return baraja;
