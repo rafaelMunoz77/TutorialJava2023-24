@@ -33,33 +33,33 @@ public class CampoBatalla {
 		Personaje ultimoP = p[p.length - 1];
 		ultimoP.setPuntosVida(ultimoP.getPuntosVida() * 2);
 	}
-	
+		
+	/**
+	 * 
+	 */
+	public void mezclaPersonajes(Personaje personajes[]) {
+		for (int i = 0; i < personajes.length; i++) {
+			int indiceAlAzar1 = Utils.obtenerNumeroAzar(0, personajes.length - 1);
+			int indiceAlAzar2 = Utils.obtenerNumeroAzar(0, personajes.length - 1);
+			
+			Personaje aux = personajes[indiceAlAzar1];
+			personajes[indiceAlAzar1] = personajes[indiceAlAzar2];
+			personajes[indiceAlAzar2] = aux;
+		}
+	}
+		
 	/**
 	 * 
 	 */
 	public void mezclaHumanos() {
-		for (int i = 0; i < humanos.length; i++) {
-			int indiceAlAzar1 = Utils.obtenerNumeroAzar(0, humanos.length - 1);
-			int indiceAlAzar2 = Utils.obtenerNumeroAzar(0, humanos.length - 1);
-			
-			Humano aux = humanos[indiceAlAzar1];
-			humanos[indiceAlAzar1] = humanos[indiceAlAzar2];
-			humanos[indiceAlAzar2] = aux;
-		}
+		mezclaPersonajes(humanos);
 	}
 	
 	/**
 	 * 
 	 */
 	public void mezclaMalvados() {
-		for (int i = 0; i < malvados.length; i++) {
-			int indiceAlAzar1 = Utils.obtenerNumeroAzar(0, malvados.length - 1);
-			int indiceAlAzar2 = Utils.obtenerNumeroAzar(0, malvados.length - 1);
-			
-			Malvado aux = malvados[indiceAlAzar1];
-			malvados[indiceAlAzar1] = malvados[indiceAlAzar2];
-			malvados[indiceAlAzar2] = aux;
-		}
+		mezclaPersonajes(malvados);
 	}
 	
 	/**
@@ -69,7 +69,7 @@ public class CampoBatalla {
 	public Humano getPrimerHumanoVivo() {
 		for (int i = 0; i < humanos.length; i++) {
 			if (humanos[i].isVivo() == true) {
-				return humanos[i];
+				return (Humano) humanos[i];
 			}
 		}
 		return null;
@@ -79,7 +79,7 @@ public class CampoBatalla {
 	public Malvado getPrimerMalvadoVivo() {
 		for (int i = 0; i < malvados.length; i++) {
 			if (malvados[i].isVivo() == true) {
-				return malvados[i];
+				return (Malvado) malvados[i];
 			}
 		}
 		return null;
