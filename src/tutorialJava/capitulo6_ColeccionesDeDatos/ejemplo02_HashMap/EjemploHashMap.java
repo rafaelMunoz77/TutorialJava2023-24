@@ -24,14 +24,15 @@ public class EjemploHashMap {
 		System.out.println("Objeto con id 1: " + hm.get("1"));  // Recuperaci�n de un solo objeto
 		
 		// Inserci�n de un objeto con un tipo de identificador diferente
-		hm.put(new Integer(6), new Persona ("66666666A", "Ram�rez Ram�rez", "Ramiro"));
+		hm.put(Integer.valueOf(6), new Persona ("66666666A", "Ram�rez Ram�rez", "Ramiro"));
 		
 		
 		// Recuperaci�n de todas las claves de objetos en el HM
 		System.out.println("\nRecorrido del HashMap:");
 		Object claves[] = hm.keySet().toArray();
 		for (int i = 0; i < claves.length; i++) {
-			System.out.println("Identificador: " + claves[i] + " - Objeto obtenido: "  + hm.get(claves[i]));
+			System.out.println("Identificador: " + claves[i] + 
+					" - Objeto obtenido: "  + hm.get(claves[i]));
 		}
 	}
 	

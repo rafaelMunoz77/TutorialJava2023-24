@@ -28,7 +28,7 @@ public class EjemploFicheroPropiedades {
 //				propiedades.load(propiedades.getClass().getResourceAsStream("/tutorialJava/capitulo6_Recursos/ejemplo.properties"));
 
 				// Otra forma de leer el fichero de propiedades
-				File file = new File("./src/tutorialJava/capitulo6_Recursos/ejemplo.properties");
+				File file = new File("./src/tutorialJava/capitulo7_Recursos/ejemplo.properties");
 				System.out.println("Fichero encontrado: " + file.exists());
 				propiedades.load(new FileReader(file));
 			
