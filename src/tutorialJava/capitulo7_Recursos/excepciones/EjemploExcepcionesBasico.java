@@ -131,7 +131,7 @@ public class EjemploExcepcionesBasico {
 	private static void ejemploClassNotFoundException () {
 		try {
 			// Ejemplo de instanciaci�n de un objeto
-			Persona persona = (Persona) Class.forName("tutorialJava.capitulo6_Recursos.excepciones.Persona").newInstance();
+			Persona persona = (Persona) Class.forName("tutorialJava.capitulo7_Recursos.excepciones.Persona").newInstance();
 			System.out.println("Objeto instanciado: " + persona);
 			
 			// Ejemplo de obtenci�n de las propiedades de un objeto
@@ -198,7 +198,7 @@ public class EjemploExcepcionesBasico {
 	public static void main (String args[]) {
 		
 //		ejemploExceptionGeneral();
-		//ejemploNullPointerException();
+//		ejemploNullPointerException();
 //		ejemploArithmeticException();
 		//ejemploClassCastException();
 		//ejemploIndexOutOfBoundsException();

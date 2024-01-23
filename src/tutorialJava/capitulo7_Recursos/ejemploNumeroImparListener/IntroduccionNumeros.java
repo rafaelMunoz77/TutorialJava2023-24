@@ -42,8 +42,11 @@ public class IntroduccionNumeros {
 		
 		// doy de alta los listeners que quieren saber que se ha introducido un número impar
 		Mesa mesa1 = new Mesa();
+		addNumeroImparListener(mesa1);
 		Perro perro1 = new Perro();
+		addNumeroImparListener(perro1);
 		Mesa mesa2 = new Mesa();
+		addNumeroImparListener(mesa2);
 		
 		do {
 			System.out.println("Introduzca un número, por favor: ");

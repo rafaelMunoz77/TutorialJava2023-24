@@ -3,9 +3,6 @@ package tutorialJava.capitulo7_Recursos.ejemploNumeroImparListener;
 public class Perro implements NumeroImparListener {
 
 	
-	public Perro () {
-		IntroduccionNumeros.addNumeroImparListener(this);
-	}
 	
 	@Override
 	public void numeroImparIntroducido(NumeroImparEvent e) {

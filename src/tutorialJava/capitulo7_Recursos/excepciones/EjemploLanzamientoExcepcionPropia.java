@@ -53,6 +53,7 @@ public class EjemploLanzamientoExcepcionPropia {
 			System.out.println(personaToString(persona));
 		} catch (PersonaNulaException e) {
 			System.out.println("Existen valores nulos en el objeto persona: " + e.getMessage());
+			e.printStackTrace();
 		} catch (PiernaNulaException e) {
 			System.out.println("Existen valores nulos en el objeto persona: " + e.getMessage());
 		}

@@ -2,12 +2,7 @@ package tutorialJava.capitulo7_Recursos.ejemploNumeroImparListener;
 
 public class Mesa implements NumeroImparListener {
 
-	/**
-	 * 
-	 */
-	public Mesa() {
-		IntroduccionNumeros.addNumeroImparListener(this);
-	}
+
 	
 	@Override
 	public void numeroImparIntroducido(NumeroImparEvent e) {
