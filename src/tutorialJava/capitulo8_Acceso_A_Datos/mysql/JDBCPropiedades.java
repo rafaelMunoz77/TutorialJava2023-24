@@ -24,7 +24,7 @@ public class JDBCPropiedades {
 			propiedades = new Properties();
 		    
 			try {
-				File file = new File("./src/tutorialJava/capitulo8_Acceso_A_Datos/jdbc.properties");
+				File file = new File("./src/tutorialJava/capitulo8_Acceso_A_Datos/mysql/jdbc.properties");
 				propiedades.load(new FileReader(file));
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
