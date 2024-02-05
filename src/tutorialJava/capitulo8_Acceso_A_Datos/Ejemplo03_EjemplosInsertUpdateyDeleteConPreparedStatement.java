@@ -10,7 +10,7 @@ import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-public class Ejemplo01c_EjemplosInsertUpdateyDeleteConPreparedStatement {
+public class Ejemplo03_EjemplosInsertUpdateyDeleteConPreparedStatement {
 
 	
 	/**
@@ -32,32 +32,6 @@ public class Ejemplo01c_EjemplosInsertUpdateyDeleteConPreparedStatement {
 		return (Connection) DriverManager.getConnection ("jdbc:mysql://" + host + "/" + schema + properties, user, password);
 	}
 	
-	
-	
-	/**
-	 * 
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
-		try {
-			Connection conn = getConexion();
-
-			realizaInsert(conn);
-
-//			realizaUpdate(conn, "Concesionario José María", "Lucena", 22);
-
-//			realizaDelete(conn, 23);
-			
-			conn.close();
-		
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-	}
 	
 	
 	/**
@@ -152,6 +126,28 @@ public class Ejemplo01c_EjemplosInsertUpdateyDeleteConPreparedStatement {
 	}
 	
 	
+	/**
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		try {
+			Connection conn = getConexion();
+
+//			realizaInsert(conn);
+//			realizaUpdate(conn, "Concesionario José María", "Lucena", 22);
+//			realizaDelete(conn, 23);
+			
+			conn.close();
+		
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
 
 
 }

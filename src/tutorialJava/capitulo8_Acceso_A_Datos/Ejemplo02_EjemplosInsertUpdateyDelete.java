@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.Statement;
 
-public class Ejemplo01b_EjemplosInsertUpdateyDelete {
+public class Ejemplo02_EjemplosInsertUpdateyDelete {
 
 	
 	/**
@@ -29,32 +29,6 @@ public class Ejemplo01b_EjemplosInsertUpdateyDelete {
 		return (Connection) DriverManager.getConnection ("jdbc:mysql://" + host + "/" + schema + properties, user, password);
 	}
 	
-	
-	
-	/**
-	 * 
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
-		try {
-			Connection conn = getConexion();
-
-//			realizaInsert(conn);
-
-//			realizaUpdate(conn, "Concesionario José María", "Lucena", 22);
-
-			realizaDelete(conn, 23);
-			
-			conn.close();
-		
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-	}
 	
 	
 	/**
@@ -135,5 +109,25 @@ public class Ejemplo01b_EjemplosInsertUpdateyDelete {
 	
 	
 
+	/**
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
 
+		try {
+			Connection conn = getConexion();
+
+			realizaInsert(conn);
+//			realizaUpdate(conn, "Concesionario José María", "Lucena", 22);
+//			realizaDelete(conn, 22);
+			
+			conn.close();
+		
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+	}
 }

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
-public class Ejemplo02_ResultSetMetadata {
+public class Ejemplo04_ResultSetMetadata {
 
 	
 	/**

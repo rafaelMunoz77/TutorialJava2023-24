@@ -12,7 +12,7 @@ import tutorialJava.modelosBasesDeDatosComunesJPA.ventaDeCoches.Coche;
 import tutorialJava.modelosBasesDeDatosComunesJPA.ventaDeCoches.Fabricante;
 import tutorialJava.modelosBasesDeDatosComunesJPA.ventaDeCoches.Venta;
 
-public class Ejemplo06_JPA_conexionBasica {
+public class Ejemplo05_JPA_conexionBasica {
 
 	
 	/** 

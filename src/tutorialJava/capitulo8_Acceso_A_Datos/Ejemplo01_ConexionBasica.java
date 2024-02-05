@@ -20,7 +20,9 @@ public class Ejemplo01_ConexionBasica {
 		   
 			// Necesitamos obtener un acceso a la BBDD, eso se materializa en un objeto de tipo Connection, al cual
 			// le tenemos que pasar los parámetros de conexión.
-			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/tutorialjavacoches?serverTimezone=UTC","java", "Abcdefgh.1");
+			Connection conexion = (Connection) DriverManager.getConnection (
+					"jdbc:mysql://localhost:3310/tutorialjavacoches?serverTimezone=UTC",
+					"root", "1234");
 		   
 			
 			// Para poder ejecutar una consulta necesitamos utilizar un objeto de tipo Statement
