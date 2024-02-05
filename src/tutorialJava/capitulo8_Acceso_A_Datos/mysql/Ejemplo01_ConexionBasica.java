@@ -74,7 +74,9 @@ public class Ejemplo01_ConexionBasica {
 		   
 			// Necesitamos obtener un acceso a la BBDD, eso se materializa en un objeto de tipo Connection, al cual
 			// le tenemos que pasar los parámetros de conexión.
-			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://" + host + "/" + schema + properties, user, password);
+			Connection conexion = (Connection) DriverManager.getConnection (
+					"jdbc:mysql://" + host + "/" + schema + properties, 
+					user, password);
 		   
 			// Para poder ejecutar una consulta necesitamos utilizar un objeto de tipo Statement
 			Statement s = (Statement) conexion.createStatement(); 

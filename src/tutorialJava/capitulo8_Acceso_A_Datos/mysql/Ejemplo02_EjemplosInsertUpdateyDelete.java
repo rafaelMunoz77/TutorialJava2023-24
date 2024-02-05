@@ -16,7 +16,9 @@ public class Ejemplo02_EjemplosInsertUpdateyDelete {
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 */
-	private static Connection getConexion() throws ClassNotFoundException, SQLException {
+	private static Connection getConexion() 
+			throws ClassNotFoundException, SQLException {
+		
 		String driver = JDBCPropiedades.getProperty("JDBC_DRIVER_CLASS");
 		String user = JDBCPropiedades.getProperty("JDBC_USER");
 		String password = JDBCPropiedades.getProperty("JDBC_PASSWORD");
@@ -58,7 +60,8 @@ public class Ejemplo02_EjemplosInsertUpdateyDelete {
 				
 		Statement s = (Statement) conn.createStatement(); 
 
-		int filasAfectadas = s.executeUpdate("insert into tutorialjavacoches.concesionario "
+		int filasAfectadas = s.executeUpdate(
+				"insert into tutorialjavacoches.concesionario "
 				+ "(id, cif, nombre, localidad) values ("
 				+ getSiguienteIdValidoConcesionario(conn) 
 				+ ", '111111A', 'Concesionario nuevo', 'Rute')");
@@ -74,14 +77,14 @@ public class Ejemplo02_EjemplosInsertUpdateyDelete {
 	 * 
 	 */
 	private static void realizaUpdate (Connection conn, String nombreMod,
-			String localidadMod, int idMod) throws SQLException {
+			String localidadMod, int id) throws SQLException {
 				
 		Statement s = (Statement) conn.createStatement(); 
 
 		int filasAfectadas = s.executeUpdate("update tutorialjavacoches.concesionario "
 				+ "set nombre = '" + nombreMod + "', "
 				+ "localidad = '" + localidadMod + "'\r\n"
-				+ "where id = " + idMod);
+				+ "where id = " + id);
 	   
 		System.out.println("Filas afectadas: " + filasAfectadas);
 		
@@ -94,13 +97,13 @@ public class Ejemplo02_EjemplosInsertUpdateyDelete {
 	 * @throws SQLException 
 	 * 
 	 */
-	private static void realizaDelete (Connection conn, int idMod) throws SQLException {
+	private static void realizaDelete (Connection conn, int id) throws SQLException {
 				
 		Statement s = (Statement) conn.createStatement(); 
 
 		int filasAfectadas = s.executeUpdate("Delete from "
 				+ "tutorialjavacoches.concesionario "
-				+ "where id = " + idMod);
+				+ "where id = " + id);
 	   
 		System.out.println("Filas afectadas: " + filasAfectadas);
 		
@@ -118,8 +121,8 @@ public class Ejemplo02_EjemplosInsertUpdateyDelete {
 		try {
 			Connection conn = getConexion();
 
-			realizaInsert(conn);
-//			realizaUpdate(conn, "Concesionario José María", "Lucena", 22);
+//			realizaInsert(conn);
+			realizaUpdate(conn, "Concesionario José María", "Lucena", 21);
 //			realizaDelete(conn, 22);
 			
 			conn.close();
