@@ -1,4 +1,4 @@
-package tutorialJava.capitulo8_Acceso_A_Datos;
+package tutorialJava.capitulo8_Acceso_A_Datos.mysql;
 
 import java.io.File;
 import java.io.FileInputStream;

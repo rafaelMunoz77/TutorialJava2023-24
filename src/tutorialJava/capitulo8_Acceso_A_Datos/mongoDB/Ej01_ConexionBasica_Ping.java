@@ -1,4 +1,4 @@
-package tutorialJava.capitulo8B_MongoDB;
+package tutorialJava.capitulo8_Acceso_A_Datos.mongoDB;
 
 import org.bson.BsonDocument;
 import org.bson.BsonInt64;
