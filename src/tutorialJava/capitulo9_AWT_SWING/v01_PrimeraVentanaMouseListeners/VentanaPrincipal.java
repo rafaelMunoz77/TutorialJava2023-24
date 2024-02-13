@@ -69,8 +69,15 @@ public class VentanaPrincipal extends JFrame {
 			public void windowClosing(WindowEvent e) {
 				String posiblesRespuestas[] = {"Sí","No"};
 				// En esta opción se utiliza un showOptionDialog en el que personalizo el icono mostrado
-				int opcionElegida = JOptionPane.showOptionDialog(null, "¿Realmente desea cerrar la aplicación?", TITULO_APLICACION, 
-				        JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, cacheImagenes.getIcono("confirm.png"), posiblesRespuestas, posiblesRespuestas[1]);
+				int opcionElegida = JOptionPane.showOptionDialog(
+						null, 
+						"¿Realmente desea cerrar la aplicación?", 
+						TITULO_APLICACION, 
+				        JOptionPane.DEFAULT_OPTION, 
+				        JOptionPane.WARNING_MESSAGE, 
+				        cacheImagenes.getIcono("confirm.png"), 
+				        posiblesRespuestas, 
+				        posiblesRespuestas[1]);
 			    if(opcionElegida == 0) {
 			      System.exit(0);          
 			    }

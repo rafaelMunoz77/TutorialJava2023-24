@@ -97,7 +97,7 @@ public class GestionFabricante extends SupertipoGestion {
 		
 		try {
 			Statement s = ConnectionManager.getConexion().createStatement();
-			nuevoIdDisponible = maxIdEnTabla("fabricante");
+			nuevoIdDisponible = nextIdEnTabla("fabricante");
 			if (nuevoIdDisponible != -1) {
 				int registrosAfectados = s.executeUpdate(
 						"insert into fabricante values (" + nuevoIdDisponible + ",'" + cif + "', '" + nombre + "')");

@@ -135,7 +135,7 @@ public class Ejemplo03_EjemplosInsertUpdateyDeleteConPreparedStatement {
 		try {
 			Connection conn = getConexion();
 
-//			realizaInsert(conn);
+			realizaInsert(conn);
 //			realizaUpdate(conn, "Concesionario José María", "Lucena", 22);
 //			realizaDelete(conn, 23);
 			

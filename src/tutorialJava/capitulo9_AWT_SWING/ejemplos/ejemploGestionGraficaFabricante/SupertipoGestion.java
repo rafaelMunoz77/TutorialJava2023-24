@@ -1,4 +1,4 @@
-package tutorialJava.capitulo8_Acceso_A_Datos.mysql.ejercicios.bloque01_CRUD_Fabricante;
+package tutorialJava.capitulo9_AWT_SWING.ejemplos.ejemploGestionGraficaFabricante;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
