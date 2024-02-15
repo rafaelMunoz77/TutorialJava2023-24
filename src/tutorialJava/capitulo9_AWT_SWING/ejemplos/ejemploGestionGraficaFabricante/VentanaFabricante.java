@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.GridBagConstraints;
 import java.awt.Font;
 import java.awt.Insets;
@@ -25,10 +27,13 @@ public class VentanaFabricante extends JFrame {
 	private JTextField jtfCif;
 	private JTextField jtfNombre;
 	private JPanel panel;
-	private JButton btnNewButton;
-	private JButton btnNewButton_1;
-	private JButton btnNewButton_2;
-	private JButton btnNewButton_3;
+	private JButton btnPrimero;
+	private JButton btnAnterior;
+	private JButton btnSiguiente;
+	private JButton btnUltimo;
+	private JButton btnNuevo;
+	private JButton btnGuardar;
+	private JButton btnEliminar;
 
 	/**
 	 * Launch the application.
@@ -60,7 +65,7 @@ public class VentanaFabricante extends JFrame {
 		GridBagLayout gbl_contentPane = new GridBagLayout();
 		gbl_contentPane.columnWidths = new int[]{0, 0, 0};
 		gbl_contentPane.rowHeights = new int[]{0, 0, 0, 0, 0, 0};
-		gbl_contentPane.columnWeights = new double[]{1.0, 1.0, Double.MIN_VALUE};
+		gbl_contentPane.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
 		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
 		contentPane.setLayout(gbl_contentPane);
 		
@@ -82,6 +87,7 @@ public class VentanaFabricante extends JFrame {
 		contentPane.add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
 		jtfId = new JTextField();
+		jtfId.setEnabled(false);
 		GridBagConstraints gbc_jtfId = new GridBagConstraints();
 		gbc_jtfId.insets = new Insets(0, 0, 5, 0);
 		gbc_jtfId.fill = GridBagConstraints.HORIZONTAL;
@@ -133,38 +139,68 @@ public class VentanaFabricante extends JFrame {
 		gbc_panel.gridy = 4;
 		contentPane.add(panel, gbc_panel);
 		
-		btnNewButton = new JButton("");
-		btnNewButton.addActionListener(new ActionListener() {
+		btnPrimero = new JButton("");
+		btnPrimero.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cargarPrimero();
 			}
 		});
-		btnNewButton.setIcon(new ImageIcon(VentanaFabricante.class.getResource("/tutorialJava/capitulo9_AWT_SWING/res/gotostart.png")));
-		panel.add(btnNewButton);
+		btnPrimero.setIcon(new ImageIcon(VentanaFabricante.class.getResource("/tutorialJava/capitulo9_AWT_SWING/res/gotostart.png")));
+		panel.add(btnPrimero);
 		
-		btnNewButton_1 = new JButton("");
-		btnNewButton_1.setIcon(new ImageIcon(VentanaFabricante.class.getResource("/tutorialJava/capitulo9_AWT_SWING/res/previous.png")));
-		panel.add(btnNewButton_1);
-		
-		btnNewButton_2 = new JButton("");
-		btnNewButton_2.setIcon(new ImageIcon(VentanaFabricante.class.getResource("/tutorialJava/capitulo9_AWT_SWING/res/next.png")));
-		panel.add(btnNewButton_2);
-		
-		btnNewButton_3 = new JButton("");
-		btnNewButton_3.addActionListener(new ActionListener() {
+		btnAnterior = new JButton("");
+		btnAnterior.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try {
-					Connection conn = ConnectionManager.getConexion();
-					Fabricante f = GestionFabricante.getUltimo(conn);
-					cargaFabricanteEnPantalla(f);
-				}
-				catch (Exception ex) {
-					ex.printStackTrace();
-				}
+				cargarAnterior();
 			}
 		});
-		btnNewButton_3.setIcon(new ImageIcon(VentanaFabricante.class.getResource("/tutorialJava/capitulo9_AWT_SWING/res/gotoend.png")));
-		panel.add(btnNewButton_3);
+		btnAnterior.setIcon(new ImageIcon(VentanaFabricante.class.getResource("/tutorialJava/capitulo9_AWT_SWING/res/previous.png")));
+		panel.add(btnAnterior);
+		
+		btnSiguiente = new JButton("");
+		btnSiguiente.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cargarSiguiente();
+			}
+		});
+		btnSiguiente.setIcon(new ImageIcon(VentanaFabricante.class.getResource("/tutorialJava/capitulo9_AWT_SWING/res/next.png")));
+		panel.add(btnSiguiente);
+		
+		btnUltimo = new JButton("");
+		btnUltimo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cargarUltimo();
+			}
+		});
+		btnUltimo.setIcon(new ImageIcon(VentanaFabricante.class.getResource("/tutorialJava/capitulo9_AWT_SWING/res/gotoend.png")));
+		panel.add(btnUltimo);
+		
+		btnNuevo = new JButton("");
+		btnNuevo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				nuevo();
+			}
+		});
+		btnNuevo.setIcon(new ImageIcon(VentanaFabricante.class.getResource("/tutorialJava/capitulo9_AWT_SWING/res/nuevo.png")));
+		panel.add(btnNuevo);
+		
+		btnGuardar = new JButton("");
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				guardar();
+			}
+		});
+		btnGuardar.setIcon(new ImageIcon(VentanaFabricante.class.getResource("/tutorialJava/capitulo9_AWT_SWING/res/guardar.png")));
+		panel.add(btnGuardar);
+		
+		btnEliminar = new JButton("");
+		btnEliminar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				eliminar();
+			}
+		});
+		btnEliminar.setIcon(new ImageIcon(VentanaFabricante.class.getResource("/tutorialJava/capitulo9_AWT_SWING/res/eliminar.png")));
+		panel.add(btnEliminar);
 	}
 	
 	/**
@@ -184,6 +220,59 @@ public class VentanaFabricante extends JFrame {
 	
 	/**
 	 * 
+	 */
+	private void cargarAnterior () {
+		try {
+			String strIdActual = jtfId.getText();
+			if (!strIdActual.trim().equals("")) {
+				int idActual = Integer.parseInt(strIdActual);
+				Connection conn = ConnectionManager.getConexion();
+				Fabricante f = GestionFabricante.getAnterior(conn, idActual);
+				cargaFabricanteEnPantalla(f);
+			}				
+		}
+		catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	
+	/**
+	 * 
+	 */
+	private void cargarUltimo () {
+		try {
+			Connection conn = ConnectionManager.getConexion();
+			Fabricante f = GestionFabricante.getUltimo(conn);
+			cargaFabricanteEnPantalla(f);
+		}
+		catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	/**
+	 * 
+	 */
+	private void cargarSiguiente () {
+		try {
+			String strIdActual = jtfId.getText();
+			if (!strIdActual.trim().equals("")) {
+				int idActual = Integer.parseInt(strIdActual);
+				Connection conn = ConnectionManager.getConexion();
+				Fabricante f = GestionFabricante.getSiguiente(conn, idActual);
+				cargaFabricanteEnPantalla(f);
+			}				
+		}
+		catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	
+	
+	/**
+	 * 
 	 * @param f
 	 */
 	private void cargaFabricanteEnPantalla(Fabricante f) {
@@ -194,7 +283,78 @@ public class VentanaFabricante extends JFrame {
 		}
 	}
 
+	
+	/**
+	 * 
+	 */
+	private void nuevo() {
+		this.jtfId.setText("");
+		this.jtfCif.setText("");
+		this.jtfNombre.setText("");
+	}
+	
+	/**
+	 * 
+	 */
+	private void guardar() {
+		try {
+			Fabricante f = new Fabricante();
+			
+			f.setId(-1);
+			if (!this.jtfId.getText().trim().equals("")) { // El id tiene número
+				f.setId(Integer.parseInt(this.jtfId.getText()));			
+			}
+			f.setCif(this.jtfCif.getText());
+			f.setNombre(this.jtfNombre.getText());
+
+			// Decido si debo insertar o modificar
+			Connection conn = ConnectionManager.getConexion();
+			if (f.getId() == -1) { // Inserción
+				int nuevoId = GestionFabricante.insercion(f, conn);
+				this.jtfId.setText("" + nuevoId);
+			}
+			else {
+				GestionFabricante.modificacion(f, conn);
+			}
+		}
+		catch (Exception ex) {
+			ex.printStackTrace();
+		}	
+	}
+	
+	
+	/**
+	 * 
+	 */
+	private void eliminar () {
+		try {
+			String respuestas[] = new String[] {"Sí", "No"};
+			int opcionElegida = JOptionPane.showOptionDialog(
+					null, 
+					"¿Realmente desea eliminar el registro?", 
+					"Eliminación de fabricante", 
+			        JOptionPane.DEFAULT_OPTION, 
+			        JOptionPane.WARNING_MESSAGE, 
+			        null, respuestas, 
+			        respuestas[1]);
+		    
+			if(opcionElegida == 0) {
+		      if (!this.jtfId.getText().trim().equals("")) {
+		    	  int id = Integer.parseInt(this.jtfId.getText());
+		    	  GestionFabricante.eliminacion(id, ConnectionManager.getConexion());
+		      }
+		    }			
+		}
+		catch (Exception ex) {
+			ex.printStackTrace();
+		}
+
+	}
 }
+
+
+
+
 
 
 
