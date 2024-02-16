@@ -340,8 +340,28 @@ public class VentanaFabricante extends JFrame {
 		    
 			if(opcionElegida == 0) {
 		      if (!this.jtfId.getText().trim().equals("")) {
-		    	  int id = Integer.parseInt(this.jtfId.getText());
-		    	  GestionFabricante.eliminacion(id, ConnectionManager.getConexion());
+		    	  int idActual = Integer.parseInt(this.jtfId.getText());
+		    	  Connection conn = ConnectionManager.getConexion();
+		    	  GestionFabricante.eliminacion(idActual, conn);
+		    	  
+		    	  // Decido qué registro voy a mostrar en pantalla.
+		    	  // Voy a comprobar si existe un anterior, si existe lo muestro
+		    	  // Si no existe anterior compruebo si existe siguiente, 
+		    	  // si existe lo muestro. En caso contrario, no quedan registros
+		    	  // así que muestro en blanco la pantalla
+		    	  Fabricante fabriAMostrar = GestionFabricante.getAnterior(conn, idActual);
+		    	  if (fabriAMostrar != null) { // Existe un anterior, lo muestro
+		    		  cargaFabricanteEnPantalla(fabriAMostrar);
+		    	  }
+		    	  else {
+		    		  fabriAMostrar = GestionFabricante.getSiguiente(conn, idActual);
+		    		  if (fabriAMostrar != null) { // Existe un siguiente
+		    			  cargaFabricanteEnPantalla(fabriAMostrar);
+		    		  }
+		    		  else { // No quedan registros en la tabla
+		    			  nuevo();
+		    		  }
+		    	  }
 		      }
 		    }			
 		}
