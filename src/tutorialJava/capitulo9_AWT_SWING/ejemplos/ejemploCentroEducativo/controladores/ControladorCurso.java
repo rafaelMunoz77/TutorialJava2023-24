@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import tutorialJava.capitulo9_AWT_SWING.ejemplos.ejemploCentroEducativo.entitidades.Curso;
 
@@ -12,6 +14,23 @@ public class ControladorCurso {
 	
 	private static String nombreTabla = "centroeducativo.curso";
 
+	
+	public static List<Curso> getTodos(Connection conn) {
+		List<Curso> l = new ArrayList<Curso>();
+		
+		try {
+			ResultSet rs = conn.createStatement().executeQuery("Select * from " + nombreTabla);
+			while (rs.next()) {
+				Curso o = getEntidadFromResultSet(rs);
+				l.add(o);
+			}			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return l;		
+	}
+	
+	
 	public static Curso getPrimero() {
 		try {
 			return getEntidad (ConnectionManager.getConexion(),
@@ -70,11 +89,17 @@ public class ControladorCurso {
 		
 		Curso o = null;
 		if (rs.next()) {
-			o = new Curso();
-			o.setId(rs.getInt("id"));
-			o.setDescripcion(rs.getString("descripcion"));
+			o = getEntidadFromResultSet(rs);
 		}
 		return o;
 	}
 
+	
+	
+	private static Curso getEntidadFromResultSet (ResultSet rs) throws SQLException {
+		Curso o = new Curso();
+		o.setId(rs.getInt("id"));
+		o.setDescripcion(rs.getString("descripcion"));
+		return o;
+	}
 }

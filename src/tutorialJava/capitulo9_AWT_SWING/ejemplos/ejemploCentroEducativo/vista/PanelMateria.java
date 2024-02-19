@@ -19,6 +19,7 @@ import java.awt.Insets;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
 
 public class PanelMateria extends JPanel {
 
@@ -26,6 +27,7 @@ public class PanelMateria extends JPanel {
 	private JTextField jtfId;
 	private JTextField jtfAcronimo;
 	private JTextField jtfNombre;
+	private JComboBox<Curso> jcbCurso;
 
 	/**
 	 * Create the panel.
@@ -100,6 +102,14 @@ public class PanelMateria extends JPanel {
 		gbc_lblNewLabel_1.gridx = 0;
 		gbc_lblNewLabel_1.gridy = 2;
 		panel.add(lblNewLabel_1, gbc_lblNewLabel_1);
+		
+		jcbCurso = new JComboBox<Curso>();
+		GridBagConstraints gbc_jcbCurso = new GridBagConstraints();
+		gbc_jcbCurso.insets = new Insets(0, 0, 5, 0);
+		gbc_jcbCurso.fill = GridBagConstraints.HORIZONTAL;
+		gbc_jcbCurso.gridx = 1;
+		gbc_jcbCurso.gridy = 2;
+		panel.add(jcbCurso, gbc_jcbCurso);
 		
 		JLabel lblNewLabel_3 = new JLabel("Acrónimo:");
 		GridBagConstraints gbc_lblNewLabel_3 = new GridBagConstraints();

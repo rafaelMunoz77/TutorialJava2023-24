@@ -1,8 +1,10 @@
 package tutorialJava.capitulo9_AWT_SWING.ejemplos.ejemploCentroEducativo;
 
 import javax.swing.JFrame;
+import javax.swing.JTabbedPane;
 
 import tutorialJava.capitulo9_AWT_SWING.ejemplos.ejemploCentroEducativo.vista.PanelCurso;
+import tutorialJava.capitulo9_AWT_SWING.ejemplos.ejemploCentroEducativo.vista.PanelMateria;
 import tutorialJava.capitulo9_AWT_SWING.utils.Apariencia;
 
 public class Principal extends JFrame {
@@ -19,7 +21,14 @@ public class Principal extends JFrame {
 		this.setBounds(0, 0, 800, 600);
 		
 		PanelCurso panelCurso = new PanelCurso();
-		this.getContentPane().add(panelCurso);
+		PanelMateria panelMateria = new PanelMateria();
+		
+		JTabbedPane panelTabbed = new JTabbedPane();
+		panelTabbed.addTab("Cursos", panelCurso);
+		panelTabbed.addTab("Materias", panelMateria);
+		panelTabbed.setSelectedIndex(0);
+		
+		this.getContentPane().add(panelTabbed);
 	}
 	
 
