@@ -72,7 +72,7 @@ public class ControladorMateria {
 		if (rs.next()) {
 			o = new Materia();
 			o.setId(rs.getInt("id"));
-			o.setId(rs.getInt("curso_id"));
+			o.setCursoId(rs.getInt("curso_id"));
 			o.setAcronimo(rs.getString("acronimo"));
 			o.setNombre(rs.getString("nombre"));
 		}

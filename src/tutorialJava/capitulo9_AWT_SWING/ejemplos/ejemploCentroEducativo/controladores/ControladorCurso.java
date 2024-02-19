@@ -15,11 +15,12 @@ public class ControladorCurso {
 	private static String nombreTabla = "centroeducativo.curso";
 
 	
-	public static List<Curso> getTodos(Connection conn) {
+	public static List<Curso> getTodos() {
 		List<Curso> l = new ArrayList<Curso>();
 		
 		try {
-			ResultSet rs = conn.createStatement().executeQuery("Select * from " + nombreTabla);
+			ResultSet rs = ConnectionManager.getConexion().createStatement()
+					.executeQuery("Select * from " + nombreTabla);
 			while (rs.next()) {
 				Curso o = getEntidadFromResultSet(rs);
 				l.add(o);

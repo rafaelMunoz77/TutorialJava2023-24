@@ -18,6 +18,7 @@ import javax.swing.ImageIcon;
 import java.awt.Insets;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 
@@ -48,6 +49,12 @@ public class PanelMateria extends JPanel {
 		toolBar.add(btnPrimero);
 		
 		JButton btnAnterior = new JButton("");
+		btnAnterior.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Curso id seleccionado: " + 
+						((Curso) jcbCurso.getSelectedItem()).getId());
+			}
+		});
 		btnAnterior.setIcon(new ImageIcon(PanelMateria.class.getResource("/tutorialJava/capitulo9_AWT_SWING/res/previous.png")));
 		toolBar.add(btnAnterior);
 		
@@ -144,8 +151,21 @@ public class PanelMateria extends JPanel {
 		panel.add(jtfNombre, gbc_jtfNombre);
 		jtfNombre.setColumns(10);
 
+		// Cargo todos los cursos en el jcombo
+		cargarTodosCursos();
+		cargarPrimero();
 	}
 
+	
+	private void cargarTodosCursos () {
+		List<Curso> l = ControladorCurso.getTodos();
+		
+		for (Curso o : l) {
+			jcbCurso.addItem(o);
+		}
+	}
+	
+	
 	/**
 	 * 
 	 */
@@ -158,7 +178,11 @@ public class PanelMateria extends JPanel {
 	private void muestraEnPantalla(Materia o) {
 		if (o != null) {
 			this.jtfId.setText("" + o.getId());
-
+			for (int i = 0; i < jcbCurso.getItemCount(); i++) {
+				if (jcbCurso.getItemAt(i).getId() == o.getCursoId()) {
+					jcbCurso.setSelectedIndex(i);
+				}
+			}
 			this.jtfAcronimo.setText(o.getAcronimo());
 			this.jtfNombre.setText(o.getNombre());
 		}
