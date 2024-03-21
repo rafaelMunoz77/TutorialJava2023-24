@@ -17,6 +17,7 @@ public class PanelEstudiante extends JPanel {
 	public PanelEstudiante() {
 		setLayout(new BorderLayout(0, 0));
 		this.add(panelDatos, BorderLayout.CENTER);
+		this.panelDatos.setTitulo("Gestión de estudiantes");
 		
 		this.panelDatos.setRunnableMostrarPrimerRegistro(
 				new Runnable() {					

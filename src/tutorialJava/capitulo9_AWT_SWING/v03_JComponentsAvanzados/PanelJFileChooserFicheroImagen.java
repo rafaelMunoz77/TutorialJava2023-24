@@ -121,7 +121,7 @@ public class PanelJFileChooserFicheroImagen extends JPanel {
 						(f.getAbsolutePath().toLowerCase().endsWith(".jpg") || 
 								f.getAbsolutePath().toLowerCase().endsWith(".jpeg")|| 
 								f.getAbsolutePath().toLowerCase().endsWith(".png")|| 
-								f.getAbsolutePath().toLowerCase().endsWith(".gif")))) 
+								f.getAbsolutePath().toLowerCase().endsWith(".gif"))))
 					return true;
 				return false;
 			}
