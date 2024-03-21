@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
+import tutorialJava.capitulo9_AWT_SWING.ejemplos.ejemplo02_GestionCentroEducativo.entitidades.Curso;
 import tutorialJava.capitulo9_AWT_SWING.ejemplos.ejemplo02_GestionCentroEducativo.entitidades.Materia;
 
 
@@ -61,6 +64,34 @@ public class ControladorMateria {
 			ex.printStackTrace();
 		}
 		return null;
+	}
+
+	
+	
+	public static List<Materia> getTodos() {
+		List<Materia> l = new ArrayList<Materia>();
+		
+		try {
+			ResultSet rs = ConnectionManager.getConexion().createStatement()
+					.executeQuery("Select * from " + nombreTabla);
+			while (rs.next()) {
+				Materia o = getEntidadFromResultSet(rs);
+				l.add(o);
+			}			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return l;		
+	}
+	
+
+	private static Materia getEntidadFromResultSet (ResultSet rs) throws SQLException {
+		Materia o = new Materia();
+		o.setId(rs.getInt("id"));
+		o.setCursoId(rs.getInt("curso_id"));
+		o.setAcronimo(rs.getString("acronimo"));
+		o.setNombre(rs.getString("nombre"));
+		return o;
 	}
 
 	

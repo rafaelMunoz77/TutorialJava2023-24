@@ -9,8 +9,9 @@ import javax.swing.JTextField;
 import tutorialJava.capitulo9_AWT_SWING.ejemplos.ejemplo02_GestionCentroEducativo.controladores.ControladorValoracionMateria;
 import tutorialJava.capitulo9_AWT_SWING.ejemplos.ejemplo02_GestionCentroEducativo.entitidades.Estudiante;
 import tutorialJava.capitulo9_AWT_SWING.ejemplos.ejemplo02_GestionCentroEducativo.entitidades.Materia;
+import tutorialJava.capitulo9_AWT_SWING.ejemplos.ejemplo02_GestionCentroEducativo.entitidades.Profesor;
 import tutorialJava.capitulo9_AWT_SWING.ejemplos.ejemplo02_GestionCentroEducativo.entitidades.ValoracionMateria;
-import tutorialJava.modelosBasesDeDatosComunesJPA.evaluacionCentroEducativo.Profesor;
+
 
 import java.awt.Insets;
 

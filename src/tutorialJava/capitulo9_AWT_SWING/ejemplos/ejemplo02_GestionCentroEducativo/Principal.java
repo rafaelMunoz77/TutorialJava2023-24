@@ -6,6 +6,7 @@ import javax.swing.JTabbedPane;
 import tutorialJava.capitulo9_AWT_SWING.ejemplos.ejemplo02_GestionCentroEducativo.vista.PanelCurso;
 import tutorialJava.capitulo9_AWT_SWING.ejemplos.ejemplo02_GestionCentroEducativo.vista.PanelEstudiante;
 import tutorialJava.capitulo9_AWT_SWING.ejemplos.ejemplo02_GestionCentroEducativo.vista.PanelMateria;
+import tutorialJava.capitulo9_AWT_SWING.ejemplos.ejemplo02_GestionCentroEducativo.vista.PanelValoracionMateriaOpcion1;
 import tutorialJava.capitulo9_AWT_SWING.utils.Apariencia;
 
 public class Principal extends JFrame {
@@ -28,6 +29,7 @@ public class Principal extends JFrame {
 		panelTabbed.addTab("Cursos", panelCurso);
 		panelTabbed.addTab("Materias", panelMateria);
 		panelTabbed.addTab("Estudiantes", new PanelEstudiante());
+		panelTabbed.addTab("Valoración Materia", new PanelValoracionMateriaOpcion1());
 		panelTabbed.setSelectedIndex(0);
 		
 		this.getContentPane().add(panelTabbed);

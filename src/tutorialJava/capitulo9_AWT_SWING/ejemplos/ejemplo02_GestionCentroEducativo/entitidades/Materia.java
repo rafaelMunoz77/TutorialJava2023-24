@@ -59,6 +59,12 @@ public class Materia {
 	public void setAcronimo(String acronimo) {
 		this.acronimo = acronimo;
 	}
+
+
+	@Override
+	public String toString() {
+		return nombre;
+	}
 	
 	
 	
