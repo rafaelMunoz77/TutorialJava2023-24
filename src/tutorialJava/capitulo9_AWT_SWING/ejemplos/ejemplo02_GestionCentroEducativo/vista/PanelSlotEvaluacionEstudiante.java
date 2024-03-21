@@ -72,6 +72,11 @@ public class PanelSlotEvaluacionEstudiante extends JPanel {
 		}
 	}
 
+	
+	public void guardarNota() {
+		
+	}
+	
 }
 
 
